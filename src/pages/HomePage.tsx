@@ -5,36 +5,42 @@ export const HomePage = () => {
     return (
         <main className="">
             {/* hiro */}
-            <section className=" bg-linear-to-b from-[#94D0DF] to-[#0094AD] text-center">
+            <section className=" bg-linear-to-b from-[#94D0DF] to-[#0094AD] text-center w-full min-h-screen">
                 <div className="max-w-170 mx-auto py-10">
                     {/* 현재위치 */}
-                    <div className="flex justify-center items-center mb-10">
-                        <MapPinIcon className="w-4 h-4 text-white font-bold items-center mr-2" />
-                        <strong className="text-white font-md font-normal">서울 강남구 역삼동</strong>
+                    <div className="flex items-center justify-center gap-2 mb-8">
+                        <MapPinIcon className="w-4 h-4 text-white" />
+                        <strong className="text-white text-lg font-medium">서울 강남구 역삼동</strong>
                     </div>
 
                     {/* 현재 날씨 정보 */}
-                    <article className="mb-10">
-                        <div>{/* 여기에는 날씨api에서 제공해주는 아이콘 넣을 예정 */}</div>
-                        <p className="text-[80px] font-bold text-white leading-tight">20 °</p>
-                        <p className="text-md text-white mb-8">흐림</p>
-                        <dl className="flex justify-center items-center gap-10 relative after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-px after:h-[70%] after:bg-gray-200">
-                            <div className="">
-                                <dt className="text-sm text-white mb-1">최고</dt>
-                                <dd className="text-2xl text-white font-bold">28 °</dd>
+                    <article className="">
+                        <div className="text-center mb-12">
+                            <div className="flex justify-center mb-6">
+                                {/* 여기에는 날씨api에서 제공해주는 아이콘 넣을 예정 */}
+                                <span className="text-white drop-shadow-lg"></span>
                             </div>
-                            <div className="">
-                                <dt className="text-sm text-white mb-1">최저</dt>
-                                <dd className="text-2xl text-white font-bold">20 °</dd>
-                            </div>
-                        </dl>
+                            <p className="text-white text-7xl md:text-8xl font-bold mb-2">20 °</p>
+                            <p className="text-white/90 text-xl mb-6">흐림</p>
+                            <dl className="flex items-center justify-center gap-8 text-white/90">
+                                <div className="">
+                                    <dt className="text-sm mb-1">최고</dt>
+                                    <dd className="text-2xl font-semibold">28 °</dd>
+                                </div>
+                                <div className="w-px h-12 bg-white/30"></div>
+                                <div className="">
+                                    <dt className="text-sm mb-1">최저</dt>
+                                    <dd className="text-2xl font-semibold">20 °</dd>
+                                </div>
+                            </dl>
+                        </div>
                     </article>
 
                     {/* 시간별 예보 */}
                     <div className="">
-                        <h2 className="text-white text-md font-medium text-left mb-4">시간별 예보</h2>
+                        <h2 className="text-white text-lg font-semibold mb-4 px-1">시간별 예보</h2>
                         <div className="w-full overflow-x-auto pb-2">
-                            <ul className="flex gap-3 min-w-max ">
+                            <ul className="flex gap-3 min-w-max px-1">
                                 <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
                                     <time className="text-white/90 text-sm font-medium" dateTime="19:00">
                                         19:00
