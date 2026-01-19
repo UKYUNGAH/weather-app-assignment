@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# 날씨 앱
+- OpenWeatherMap API를 사용한 날씨 정보 애플리케이션
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 실행 방법
 
-Currently, two official plugins are available:
+\`\`\`bash
+npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# .env 파일 생성
+# VITE_WEATHER_API_KEY=여기에_API_키_입력
 
-## React Compiler
+npm run dev
+\`\`\`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 구현 기능
 
-## Expanding the ESLint configuration
+- 현재 위치 자동 감지
+- 현재/최고/최저 온도
+- 시간별 날씨 예보 (12시간)
+- 장소 검색 (시/군/구/동)
+- 즐겨찾기 추가/삭제/수정
+- 별칭 설정 모달
+- 상세 페이지
+- localStorage 영구 저장
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 기술 스택
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Tanstack Query (서버 상태 관리)
+- React Router
+- @heroicons/react
+- OpenWeatherMap API
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 폴더 구조 (FSD)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+\`\`\`
+src/
+├── shared/           # 공통
+│   ├── types/       # TypeScript 타입
+│   ├── api/         # API 함수
+│   ├── hooks/       # 커스텀 Hook
+│   ├── data/        # 정적 데이터
+│   └── utils/       # 유틸 함수
+├── features/         # 기능별
+│   ├── weather/     # 날씨
+│   ├── search/      # 검색
+│   └── favorites/   # 즐겨찾기
+└── pages/            # 페이지
+    ├── HomePage.tsx
+    └── DetailPage.tsx
+\`\`\`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 기술적 의사결정
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **FSD 아키텍처**: 기능별 모듈화로 유지보수성 향상
+2. **Tanstack Query**: 자동 캐싱(5분), 로딩/에러 관리
+3. **좌표 하드코딩**: Geocoding API 비용 절감, 10개
+4. **localStorage**: 간단한 영구 저장, 백엔드 불필요
+5. **Tailwind CSS**: 빠른 개발, 일관된 디자인
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 디자인 특징
+
+- 기업의 로고색상과 일관성있게 그라데이션 배경 적용
+- 글래스모피즘 (반투명 + 블러)
+- 반응형 (모바일/태블릿/데스크탑)
+- heroicons (outline 스타일)
+
+## 배포
+
+Vercel: [(https://weather-app-assignment-rho.vercel.app/)]
+GitHub: [(https://github.com/UKYUNGAH/weather-app-assignment/)]
+\`\`\`
+
+
+배포 url 접속 시 위치 권한 허용 필요합니다.
