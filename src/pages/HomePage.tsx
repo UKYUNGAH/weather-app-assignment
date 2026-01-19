@@ -1,6 +1,10 @@
-import { MapPinIcon, MagnifyingGlassIcon, PencilIcon, HeartIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import WeatherDisplay from '@/shared/ui/WeatherDisplay';
+import HourlyItem from '@/shared/ui/HourlyItem';
+import SearchResultItem from '@/shared/ui/SearchResultItem';
+import FavoriteCard from '@/shared/ui/FavoriteCard';
+import Modal from '@/shared/ui/Modal';
 
 export const HomePage = () => {
     return (
@@ -24,76 +28,16 @@ export const HomePage = () => {
                         <h2 className="text-white text-lg font-semibold mb-4 px-1">시간별 예보</h2>
                         <div className="w-full overflow-x-auto pb-2">
                             <ul className="flex gap-3 min-w-max px-1">
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
-                                <li className="flex flex-col items-center gap-2 bg-white/20 backdrop-blur-sm rounded-2xl px-4 py-3 min-w-20">
-                                    <time className="text-white/90 text-sm font-medium" dateTime="19:00">
-                                        19:00
-                                    </time>
-                                    <div className="text-white">{/* api 제공 이미지 */}</div>
-                                    <p className="text-white text-base font-semibold">22 °</p>
-                                </li>
+                                <HourlyItem time="19:00" temperature={22} />
+                                <HourlyItem time="20:00" temperature={23} />
+                                <HourlyItem time="21:00" temperature={24} />
+                                <HourlyItem time="22:00" temperature={22} />
+                                <HourlyItem time="23:00" temperature={21} />
+                                <HourlyItem time="00:00" temperature={20} />
+                                <HourlyItem time="01:00" temperature={19} />
+                                <HourlyItem time="02:00" temperature={18} />
+                                <HourlyItem time="03:00" temperature={18} />
+                                <HourlyItem time="04:00" temperature={17} />
                             </ul>
                         </div>
                     </div>
@@ -117,9 +61,9 @@ export const HomePage = () => {
 
                         {/* 검색결과 - 지역 뜰 때 */}
                         <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-100 max-h-75 overflow-y-auto z-1">
-                            <button className="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-b-0 first:rounded-t-xl last:rounded-b-xl">
-                                <div className="font-medium text-gray-900">인천 남동구 구월3동</div>
-                            </button>
+                            <SearchResultItem location="인천 남동구 구월3동" onClick={() => console.log('클릭!')} />
+                            <SearchResultItem location="인천 남동구 간석동" onClick={() => console.log('클릭!')} />
+                            <SearchResultItem location="인천 남동구 만수동" onClick={() => console.log('클릭!')} />
                         </div>
 
                         {/* 검색결과 - 없을 때 */}
@@ -143,42 +87,28 @@ export const HomePage = () => {
 
                     {/* 카드 */}
                     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <li className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all p-5 relative group cursor-pointer ">
-                            <div className="flex items-start justify-between mb-3">
-                                <div className="flex-1">
-                                    <h3 className="font-semibold text-gray-900 text-lg mb-1">우리집</h3>
-                                    <p className="text-sm text-gray-500">인천 남동구 구월3동</p>
-                                </div>
-                                <div className="flex gap-2">
-                                    <button
-                                        className="text-gray-400 hover:text-[#0094AD] transition-colors p-1"
-                                        title="별칭 수정"
-                                    >
-                                        <PencilIcon className="text-gray-400  w-4 h-4" />
-                                    </button>
-                                    <button
-                                        className="text-gray-400 hover:text-red-500 transition-colors p-1 "
-                                        title="즐겨찾기 제거"
-                                    >
-                                        <HeartIcon className="w-4 h-4" />
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                    <div className="text-[#0094AD]" />
-                                    <div>
-                                        <div className="text-3xl font-bold text-gray-900">20°</div>
-                                        <div className="text-sm text-gray-500 mt-1">비</div>
-                                    </div>
-                                </div>
-                                <div className="text-right">
-                                    <div className="text-sm text-gray-500">최고/최저</div>
-                                    <div className="text-base font-semibold text-gray-700">26° / 20°</div>
-                                </div>
-                            </div>
-                        </li>
+                        <FavoriteCard
+                            displayName="우리집"
+                            location="인천 남동구 구월3동"
+                            temperature={20}
+                            description="비"
+                            minTemp={20}
+                            maxTemp={26}
+                            onEdit={() => console.log('수정')}
+                            onDelete={() => console.log('삭제')}
+                            onClick={() => console.log('상세 페이지')}
+                        />
+                        <FavoriteCard
+                            displayName="회사"
+                            location="서울 강남구 역삼동"
+                            temperature={22}
+                            description="맑음"
+                            minTemp={18}
+                            maxTemp={25}
+                            onEdit={() => console.log('수정')}
+                            onDelete={() => console.log('삭제')}
+                            onClick={() => console.log('상세 페이지')}
+                        />
                     </ul>
 
                     {/* 즐겨찾기 없을 때 */}
@@ -193,7 +123,7 @@ export const HomePage = () => {
             </section>
 
             {/* 모달 */}
-            <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 hidden">
+            <Modal isOpen={false} onClose={() => console.log('닫기')}>
                 <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-semibold text-gray-900">별칭 수정</h2>
@@ -238,7 +168,7 @@ export const HomePage = () => {
                         </div>
                     </form>
                 </div>
-            </div>
+            </Modal>
         </main>
     );
 };
