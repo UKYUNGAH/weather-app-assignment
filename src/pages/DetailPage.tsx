@@ -1,3 +1,4 @@
+import WeatherDisplay from '@/shared/ui/WeatherDisplay';
 import { MapPinIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 export const DetailPage = () => {
@@ -23,26 +24,9 @@ export const DetailPage = () => {
 
             {/* 현재 날씨 카드 */}
             <section className="">
-                <div className="bg-white/15 backdrop-blur-md rounded-3xl shadow-lg max-w-2xl mx-auto px-4 py-8 pb-16 text-center mb-10">
-                    {/* 현재 날씨 정보 */}
-                    <div className="flex justify-center mb-6">
-                        <i className='className="text-white drop-shadow-lg"'></i>
-                        {/* 여기에는 날씨api에서 제공해주는 아이콘 넣을 예정 */}
-                    </div>
-                    <p className="text-white text-7xl font-bold mb-3">20 °</p>
-                    <p className="text-white/90 text-xl mb-6">흐림</p>
-                    <dl className="flex items-center justify-center gap-8 text-white/90">
-                        <div className="">
-                            <dt className="text-sm mb-1">최고</dt>
-                            <dd className="text-2xl font-semibold">28 °</dd>
-                        </div>
-                        <div className="w-px h-12 bg-white/30"></div>
-                        <div className="">
-                            <dt className="text-sm mb-1">최저</dt>
-                            <dd className="text-2xl font-semibold">20 °</dd>
-                        </div>
-                    </dl>
-                </div>
+                <section>
+                    <WeatherDisplay variant="card" temperature={20} description="흐림" maxTemp={28} minTemp={20} />
+                </section>
             </section>
 
             {/* 시간별 예보 */}

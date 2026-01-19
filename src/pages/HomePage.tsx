@@ -1,5 +1,6 @@
 import { MapPinIcon, MagnifyingGlassIcon, PencilIcon, HeartIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
+import WeatherDisplay from '@/shared/ui/WeatherDisplay';
 
 export const HomePage = () => {
     return (
@@ -15,25 +16,7 @@ export const HomePage = () => {
 
                     {/* 현재 날씨 정보 */}
                     <article className="">
-                        <div className="text-center mb-12">
-                            <div className="flex justify-center mb-6">
-                                {/* 여기에는 날씨api에서 제공해주는 아이콘 넣을 예정 */}
-                                <span className="text-white drop-shadow-lg"></span>
-                            </div>
-                            <p className="text-white text-7xl md:text-8xl font-bold mb-2">20 °</p>
-                            <p className="text-white/90 text-xl mb-6">흐림</p>
-                            <dl className="flex items-center justify-center gap-8 text-white/90">
-                                <div className="">
-                                    <dt className="text-sm mb-1">최고</dt>
-                                    <dd className="text-2xl font-semibold">28 °</dd>
-                                </div>
-                                <div className="w-px h-12 bg-white/30"></div>
-                                <div className="">
-                                    <dt className="text-sm mb-1">최저</dt>
-                                    <dd className="text-2xl font-semibold">20 °</dd>
-                                </div>
-                            </dl>
-                        </div>
+                        <WeatherDisplay variant="plain" temperature={20} description="흐림" maxTemp={28} minTemp={20} />
                     </article>
 
                     {/* 시간별 예보 */}
