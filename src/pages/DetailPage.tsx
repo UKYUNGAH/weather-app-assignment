@@ -1,5 +1,5 @@
-import WeatherDisplay from '@/shared/ui/WeatherDisplay';
 import { MapPinIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
+import WeatherDisplay from '@/shared/ui/WeatherDisplay';
 
 export const DetailPage = () => {
     return (

@@ -2,8 +2,8 @@ import { MapPinIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import WeatherDisplay from '@/shared/ui/WeatherDisplay';
 import HourlyItem from '@/shared/ui/HourlyItem';
-import SearchResultItem from '@/shared/ui/SearchResultItem';
-import FavoriteCard from '@/shared/ui/FavoriteCard';
+import SearchResultItem from '@/features/search/ui/SearchResultItem';
+import FavoriteCard from '@/features/favorites/ui/FavoriteCard';
 import Modal from '@/shared/ui/Modal';
 
 export const HomePage = () => {
