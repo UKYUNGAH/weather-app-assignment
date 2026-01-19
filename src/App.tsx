@@ -1,9 +1,21 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HomePage } from './pages/HomePage';
-// import { DetailPage } from './pages/DetailPage';
+import { DetailPage } from './pages/DetailPage';
+
+const queryClient = new QueryClient();
 
 function App() {
-    return <HomePage />;
-    // return <DetailPage />;
+    return (
+        <QueryClientProvider client={queryClient}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/detail/:lat/:lon/:name" element={<DetailPage />} />
+                </Routes>
+            </BrowserRouter>
+        </QueryClientProvider>
+    );
 }
 
 export default App;

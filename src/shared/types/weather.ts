@@ -1,28 +1,44 @@
-export interface WeatherData {
-    main: {
-        temp: number; //현재 온도
-        temp_min: number; // 최저 온도
-        temp_max: number; // 최고 온도
-    };
-    weather: Array<{
-        description: string; // 날씨 설명
-        icon: string; // 아이콘 코드
-    }>;
-}
+// src/shared/types/weather.ts
 
-// 시간별 날씨
-export interface HourlyWeather {
-    dt: number; // 시간
-    main: {
-        temp: number; // 온도
+export interface WeatherResponse {
+    // ✅ export 추가!
+    coord: {
+        lon: number;
+        lat: number;
     };
     weather: Array<{
+        id: number;
+        main: string;
         description: string;
         icon: string;
     }>;
+    main: {
+        temp: number;
+        feels_like: number;
+        temp_min: number;
+        temp_max: number;
+        pressure: number;
+        humidity: number;
+    };
+    wind: {
+        speed: number;
+    };
+    dt: number;
+    name: string;
 }
 
-// 시간별 날씨 응답
-export interface HourlyResponse {
-    list: HourlyWeather[];
+export interface HourlyWeatherResponse {
+    // ✅ export 추가!
+    list: Array<{
+        dt: number;
+        main: {
+            temp: number;
+            temp_min: number;
+            temp_max: number;
+        };
+        weather: Array<{
+            icon: string;
+            description: string;
+        }>;
+    }>;
 }
