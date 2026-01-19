@@ -21,7 +21,7 @@ const WeatherDisplay = ({ variant, temperature, description, maxTemp, minTemp, i
         >
             {iconUrl && (
                 <div className="flex justify-center mb-6">
-                    <img src={iconUrl} alt={description} className="w-20 h-20" />
+                    <img src={iconUrl} alt={description} className="w-30 h-30" />
                 </div>
             )}
 
