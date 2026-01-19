@@ -3,14 +3,15 @@
 
 ## 실행 방법
 
-\`\`\`bash
+```
+bash
 npm install
 
 # .env 파일 생성
 # VITE_WEATHER_API_KEY=여기에_API_키_입력
 
 npm run dev
-\`\`\`
+```
 
 ## 구현 기능
 
@@ -36,7 +37,7 @@ npm run dev
 
 ## 폴더 구조 (FSD)
 
-\`\`\`
+```
 src/
 ├── shared/           # 공통
 │   ├── types/       # TypeScript 타입
@@ -51,7 +52,8 @@ src/
 └── pages/            # 페이지
     ├── HomePage.tsx
     └── DetailPage.tsx
-\`\`\`
+
+```
 
 ## 기술적 의사결정
 
@@ -72,7 +74,7 @@ src/
 
 Vercel: [(https://weather-app-assignment-rho.vercel.app/)]
 GitHub: [(https://github.com/UKYUNGAH/weather-app-assignment/)]
-\`\`\`
+```
 
 
 배포 url 접속 시 위치 권한 허용 필요합니다.
